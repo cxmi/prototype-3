@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 869769838095331484}
   - component: {fileID: 6644216248097836370}
   - component: {fileID: 186380374597707432}
+  - component: {fileID: 2561235030299087710}
   - component: {fileID: 7977225442887263839}
   - component: {fileID: 4835412646611881347}
   - component: {fileID: 2244408685681967723}
@@ -122,6 +123,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2561235030299087710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673090046408118258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3492ef0ba73f64aa1b7c1572a1f1fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
+  availableColors: []
+  colorRandomizer: {fileID: 0}
+  planetColor: {fileID: 0}
 --- !u!231 &7977225442887263839
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -214,13 +230,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66ab86ac45646b99f23206a704bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorRandomizer
-  colorOptions:
-  - {r: 0.99607843, g: 0.9882353, b: 0.30588236, a: 1}
-  - {r: 0.28235295, g: 0.96862745, b: 0.96862745, a: 1}
-  - {r: 1, g: 0.30980393, b: 0.34901962, a: 1}
-  - {r: 0.9647059, g: 0.1882353, b: 0.9764706, a: 1}
-  - {r: 0.32156864, g: 0.16470589, b: 0.9882353, a: 1}
-  - {r: 0.21176471, g: 1, b: 0.23529412, a: 1}
 --- !u!1 &8919420639691673416
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +242,7 @@ GameObject:
   - component: {fileID: 3331745446307921940}
   - component: {fileID: 2459602635233708908}
   - component: {fileID: 8802738004875645410}
+  - component: {fileID: 3683229594424181407}
   - component: {fileID: 2882161234444006119}
   - component: {fileID: 7074115954531708380}
   - component: {fileID: 190988004816747039}
@@ -360,6 +370,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3683229594424181407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919420639691673416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3492ef0ba73f64aa1b7c1572a1f1fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
+  availableColors: []
+  colorRandomizer: {fileID: 0}
+  planetColor: {fileID: 0}
 --- !u!61 &2882161234444006119
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,13 +456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66ab86ac45646b99f23206a704bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorRandomizer
-  colorOptions:
-  - {r: 0.99607843, g: 0.9882353, b: 0.30588236, a: 1}
-  - {r: 0.28235295, g: 0.96862745, b: 0.96862745, a: 1}
-  - {r: 1, g: 0.30980393, b: 0.34901962, a: 1}
-  - {r: 0.9647059, g: 0.1882353, b: 0.9764706, a: 1}
-  - {r: 0.32156864, g: 0.16470589, b: 0.9882353, a: 1}
-  - {r: 0.21176471, g: 1, b: 0.23529412, a: 1}
 --- !u!1 &9069707587976585042
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +467,7 @@ GameObject:
   - component: {fileID: 4934634097740932655}
   - component: {fileID: 2424133653169201951}
   - component: {fileID: 6620682839461181243}
+  - component: {fileID: 9198647757750994166}
   - component: {fileID: 8338969338356649373}
   - component: {fileID: 2716073046098982889}
   - component: {fileID: 3781005089859470511}
@@ -560,6 +579,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &9198647757750994166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069707587976585042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3492ef0ba73f64aa1b7c1572a1f1fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
+  availableColors: []
+  colorRandomizer: {fileID: 0}
+  planetColor: {fileID: 0}
 --- !u!231 &8338969338356649373
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -652,10 +686,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66ab86ac45646b99f23206a704bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorRandomizer
-  colorOptions:
-  - {r: 0.99607843, g: 0.9882353, b: 0.30588236, a: 1}
-  - {r: 0.28235295, g: 0.96862745, b: 0.96862745, a: 1}
-  - {r: 1, g: 0.30980393, b: 0.34901962, a: 1}
-  - {r: 0.9647059, g: 0.1882353, b: 0.9764706, a: 1}
-  - {r: 0.32156864, g: 0.16470589, b: 0.9882353, a: 1}
-  - {r: 0.21176471, g: 1, b: 0.23529412, a: 1}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - Wall
+  - Black
   layers:
   - Default
   - TransparentFX
