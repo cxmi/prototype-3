@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4835412646611881347}
   - component: {fileID: 2244408685681967723}
   - component: {fileID: 6076371070052669230}
+  - component: {fileID: 7371970326139652512}
   m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
@@ -230,6 +231,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66ab86ac45646b99f23206a704bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorRandomizer
+--- !u!114 &7371970326139652512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2673090046408118258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3492ef0ba73f64aa1b7c1572a1f1fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
+  availableColors: []
+  colorRandomizer: {fileID: 0}
+  planetColor: {fileID: 0}
 --- !u!1 &8919420639691673416
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +262,7 @@ GameObject:
   - component: {fileID: 2882161234444006119}
   - component: {fileID: 7074115954531708380}
   - component: {fileID: 190988004816747039}
+  - component: {fileID: 5745306007719286945}
   m_Layer: 6
   m_Name: Square-Head
   m_TagString: Untagged
@@ -456,6 +473,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66ab86ac45646b99f23206a704bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorRandomizer
+--- !u!114 &5745306007719286945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8919420639691673416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3492ef0ba73f64aa1b7c1572a1f1fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
+  availableColors: []
+  colorRandomizer: {fileID: 0}
+  planetColor: {fileID: 0}
 --- !u!1 &9069707587976585042
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +504,7 @@ GameObject:
   - component: {fileID: 2716073046098982889}
   - component: {fileID: 3781005089859470511}
   - component: {fileID: 7446607025407361493}
+  - component: {fileID: 2054499474028387523}
   m_Layer: 6
   m_Name: Square (2)
   m_TagString: Untagged
@@ -686,3 +719,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e66ab86ac45646b99f23206a704bd56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColorRandomizer
+--- !u!114 &2054499474028387523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9069707587976585042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3492ef0ba73f64aa1b7c1572a1f1fa0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
+  availableColors: []
+  colorRandomizer: {fileID: 0}
+  planetColor: {fileID: 0}

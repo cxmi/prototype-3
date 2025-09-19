@@ -4,7 +4,7 @@ public class ContactLogic : MonoBehaviour
 {
     public Color[] availableColors;
     public static int score = 0;
-    public ColorRandomizer colorRandomizer;
+    //public ColorRandomizer colorRandomizer;
     public PlanetColorRandomizer planetColor;
 
     private SpriteRenderer sr;
@@ -12,8 +12,9 @@ public class ContactLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        colorRandomizer = GetComponent<ColorRandomizer>();
+        //colorRandomizer = GetComponent<ColorRandomizer>();
         sr = GetComponent<SpriteRenderer>();
+        planetColor = FindFirstObjectByType<PlanetColorRandomizer>();
 
         availableColors = new Color[]
         {
