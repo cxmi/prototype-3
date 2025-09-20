@@ -137,7 +137,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
   availableColors: []
-  colorRandomizer: {fileID: 0}
   planetColor: {fileID: 0}
 --- !u!231 &7977225442887263839
 SpringJoint2D:
@@ -244,7 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
   availableColors: []
-  colorRandomizer: {fileID: 0}
   planetColor: {fileID: 0}
 --- !u!1 &8919420639691673416
 GameObject:
@@ -358,7 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveHeadScript
   moveSpeed: 5
-  moveForce: 15
+  moveForce: 18
   limitDiagonalSpeed: 1
 --- !u!50 &8802738004875645410
 Rigidbody2D:
@@ -400,7 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
   availableColors: []
-  colorRandomizer: {fileID: 0}
   planetColor: {fileID: 0}
 --- !u!61 &2882161234444006119
 BoxCollider2D:
@@ -486,7 +483,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
   availableColors: []
-  colorRandomizer: {fileID: 0}
   planetColor: {fileID: 0}
 --- !u!1 &9069707587976585042
 GameObject:
@@ -625,7 +621,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
   availableColors: []
-  colorRandomizer: {fileID: 0}
   planetColor: {fileID: 0}
 --- !u!231 &8338969338356649373
 SpringJoint2D:
@@ -732,5 +727,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ContactLogic
   availableColors: []
-  colorRandomizer: {fileID: 0}
   planetColor: {fileID: 0}

@@ -51,6 +51,7 @@ public class ContactLogic : MonoBehaviour
 
                 // Change planet color to a new random color from the array
                 planetColor.ChangePlanetColor();
+                Destroy(gameObject);
             }
         }
     }
