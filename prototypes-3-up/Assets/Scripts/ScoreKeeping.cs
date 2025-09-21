@@ -48,7 +48,8 @@ public class ScoreKeeping : MonoBehaviour
         }
         else
         {
-            scoreText.text = ContactLogic.score.ToString();
+            int scoreMath = ContactLogic.score / 2;
+            scoreText.text = scoreMath.ToString();
 
         }
     }
