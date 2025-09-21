@@ -267,6 +267,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreKeeping
   scoreText: {fileID: 1139440852}
+  anyButtonAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 11f7bcf3-97fc-4dfe-8c09-c6d68d4469d0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!114 &4917118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4175,7 +4184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: RESTART
+  m_text: PRESS ANY KEY TO RESTART
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5f631243e16aa4047a95318a1aab8095, type: 2}
   m_sharedMaterial: {fileID: 6053566000518497702, guid: 5f631243e16aa4047a95318a1aab8095, type: 2}
@@ -5197,7 +5206,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -478}
-  m_SizeDelta: {x: 160, y: 40}
+  m_SizeDelta: {x: 400, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669966001
 MonoBehaviour:
