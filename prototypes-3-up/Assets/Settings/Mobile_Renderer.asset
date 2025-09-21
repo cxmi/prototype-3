@@ -13,11 +13,9 @@ MonoBehaviour:
   m_Name: Mobile_Renderer
   m_EditorClassIdentifier: 
   debugShaders:
-    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7,
-      type: 3}
+    debugReplacementPS: {fileID: 4800000, guid: cf852408f2e174538bcd9b7fda1c5ae7, type: 3}
     hdrDebugViewPS: {fileID: 4800000, guid: 573620ae32aec764abd4d728906d2587, type: 3}
-    probeVolumeSamplingDebugComputeShader: {fileID: 7200000, guid: 53626a513ea68ce47b59dc1299fe3959,
-      type: 3}
+    probeVolumeSamplingDebugComputeShader: {fileID: 7200000, guid: 53626a513ea68ce47b59dc1299fe3959, type: 3}
   probeVolumeResources:
     probeVolumeDebugShader: {fileID: 0}
     probeVolumeFragmentationDebugShader: {fileID: 0}
@@ -26,11 +24,17 @@ MonoBehaviour:
     probeSamplingDebugMesh: {fileID: 0}
     probeSamplingDebugTexture: {fileID: 0}
     probeVolumeBlendStatesCS: {fileID: 0}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: 4757090345941657691}
+  - {fileID: 8005901036719670495}
+  m_RendererFeatureMap: 5be84a2a77940442df849b6893ac1a6f
   m_UseNativeRenderPass: 1
+  xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
-  m_AssetVersion: 2
+  m_AssetVersion: 3
+  m_PrepassLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -48,5 +52,71 @@ MonoBehaviour:
   m_RenderingMode: 0
   m_DepthPrimingMode: 0
   m_CopyDepthMode: 0
+  m_DepthAttachmentFormat: 0
+  m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 0
+--- !u!114 &4757090345941657691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d56597b0a50618247b43536d4501a4bf, type: 3}
+  m_Name: VHS
+  m_EditorClassIdentifier: FronkonGames.Glitches.VHS::FronkonGames.Glitches.VHS.VHS
+  m_Active: 1
+  settings:
+    intensity: 0.0085
+    noise: 0
+    noiseSpeed: 0
+    noiseSize: 0
+    noiseBlend: 14
+    noiseColor: {r: 0, g: 1, b: 0.896049, a: 1}
+    pause: 0.33
+    pauseNoise: 0
+    pauseBand: 0
+    pauseBlend: 22
+    pauseColor: {r: 1, g: 1, b: 1, a: 1}
+    brightness: -0.04
+    contrast: 1.13
+    gamma: 0.021
+    hue: 0.02
+    saturation: 1.59
+    affectSceneView: 0
+    whenToInsert: 550
+--- !u!114 &8005901036719670495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bb6521c5ca91c9439a5b7bcbe17b2c8, type: 3}
+  m_Name: Artifacts
+  m_EditorClassIdentifier: FronkonGames.Glitches.Artifacts::FronkonGames.Glitches.Artifacts.Artifacts
+  m_Active: 1
+  settings:
+    intensity: 0.02
+    size: {x: 16, y: 16}
+    luminanceRange: {x: 0, y: 1}
+    blocks: 0.1
+    blockBlend: 13
+    blockTint: {r: 0, g: 1, b: 0, a: 0.25}
+    lines: 0.4
+    lineBlend: 13
+    lineTint: {r: 0, g: 1, b: 0, a: 0.5}
+    aberration: 0.16
+    interleave: 1
+    brightness: 0
+    contrast: 1
+    gamma: 1
+    hue: 0
+    saturation: 1
+    affectSceneView: 0
+    whenToInsert: 550
