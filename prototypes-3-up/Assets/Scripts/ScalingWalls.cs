@@ -7,20 +7,20 @@ public class ScalingWalls : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        wallsScaled = false;    
+        //wallsScaled = false;    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.localScale.x < 1.7)
+        if (transform.localScale.x < 1.6)
         {
             transform.localScale += new Vector3(scaleAmount, scaleAmount, 0f);
         }
         else
         {
-            wallsScaled = true;
-            transform.localScale = new Vector3(1,1,0f);
+            //wallsScaled = true;
+            transform.localScale = new Vector3(.7f,.7f,0f);
         }
     }
 }
