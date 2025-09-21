@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScoreKeeping : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
-    
+    public InputActionAsset inputActions;
     public InputAction anyButtonAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -17,7 +17,11 @@ public class ScoreKeeping : MonoBehaviour
 
     void OnEnable()
     {
-        anyButtonAction.Enable();
+        anyButtonAction = inputActions.FindAction("AnyButton");
+        if (anyButtonAction != null)
+        {
+            anyButtonAction.Enable();
+        }
     }
 
     void OnDisable()
@@ -28,7 +32,11 @@ public class ScoreKeeping : MonoBehaviour
     void Update()
     {
         scoreText.text = ContactLogic.score.ToString();
-        if (anyButtonAction.triggered)
+        if (anyButtonAction != null && anyButtonAction.triggered &&
+            !Keyboard.current.wKey.wasPressedThisFrame &&
+            !Keyboard.current.aKey.wasPressedThisFrame &&
+            !Keyboard.current.sKey.wasPressedThisFrame &&
+            !Keyboard.current.dKey.wasPressedThisFrame)
         {
             Restart();
         }
