@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreKeeping : MonoBehaviour
 {
@@ -14,5 +15,11 @@ public class ScoreKeeping : MonoBehaviour
     void Update()
     {
         scoreText.text = ContactLogic.score.ToString();
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 }

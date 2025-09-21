@@ -1,11 +1,17 @@
+using System.Collections;
 using UnityEngine;
 
 public class ContactLogic : MonoBehaviour
 {
     public Color[] availableColors;
     public static int score = 0;
+    public AudioSource musicSource;
+ 
+
     //public ColorRandomizer colorRandomizer;
     public PlanetColorRandomizer planetColor;
+
+    //private float pauseDuration = 0.25f;
 
     private SpriteRenderer sr;
     
@@ -15,6 +21,8 @@ public class ContactLogic : MonoBehaviour
         //colorRandomizer = GetComponent<ColorRandomizer>();
         sr = GetComponent<SpriteRenderer>();
         planetColor = FindFirstObjectByType<PlanetColorRandomizer>();
+        musicSource = FindFirstObjectByType<AudioSource>();  
+   
 
         availableColors = new Color[]
         {
@@ -29,6 +37,17 @@ public class ContactLogic : MonoBehaviour
     {
         Debug.Log(score);
     }
+    // IEnumerator BriefPause()
+    // {
+    //     musicSource.Pause();
+    //     yield return new WaitForSeconds(pauseDuration);
+    //     musicSource.UnPause();
+    // }
+    
+    
+
+
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
@@ -51,11 +70,19 @@ public class ContactLogic : MonoBehaviour
 
                 // Change planet color to a new random color from the array
                 planetColor.ChangePlanetColor();
+                FindFirstObjectByType<ScreenShake>().Shake();
+                //musicSource.pitch += 0.025f;
+                
+                FindFirstObjectByType<LowPassScript>().TriggerLowPassEffect();
+
+                //StartCoroutine(BriefPause());
+
+                //debug - comment out below
                 Destroy(gameObject);
             }
         }
     }
-        
+
 
     
 }
