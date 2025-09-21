@@ -1,0 +1,17 @@
+{
+  "name": "com.fronkongames.glitches.vhs",
+  "version": "2.1.2",
+  "displayName": "Glitches: VHS",
+  "description": "Analog beauty.",
+  "unity": "2022.3",
+  "unityRelease": "45f1",
+  "dependencies":  {  },
+  "documentationUrl": "https://fronkongames.github.io/store/glitches/",
+  "keywords": [ "unity", "fps", "vr", "glitch", "glitches", "vhs", "interferences", "noise", "retro", "video", "film", "movie", "TV", "CRT" ],
+  "author":
+  {
+    "name": "Fronkon Games",
+    "email": "fronkongames@gmail.com",
+    "url": "https://fronkongames.github.io/store/glitches/"
+  }
+}
