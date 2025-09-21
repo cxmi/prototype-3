@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: FronkonGames.Glitches.VHS::FronkonGames.Glitches.VHS.VHS
   m_Active: 1
   settings:
-    intensity: 0.02
+    intensity: 0.01
     noise: 0
     noiseSpeed: 0
     noiseSize: 0
