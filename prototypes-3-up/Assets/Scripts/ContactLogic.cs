@@ -18,6 +18,7 @@ public class ContactLogic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        score = 0;
         //colorRandomizer = GetComponent<ColorRandomizer>();
         sr = GetComponent<SpriteRenderer>();
         planetColor = FindFirstObjectByType<PlanetColorRandomizer>();

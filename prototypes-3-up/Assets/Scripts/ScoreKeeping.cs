@@ -8,6 +8,7 @@ public class ScoreKeeping : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public InputActionAsset inputActions;
     public InputAction anyButtonAction;
+    public TextMeshProUGUI restartButtonText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,7 +32,6 @@ public class ScoreKeeping : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = ContactLogic.score.ToString();
         if (anyButtonAction != null && anyButtonAction.triggered &&
             !Keyboard.current.wKey.wasPressedThisFrame &&
             !Keyboard.current.aKey.wasPressedThisFrame &&
@@ -39,6 +39,17 @@ public class ScoreKeeping : MonoBehaviour
             !Keyboard.current.dKey.wasPressedThisFrame)
         {
             Restart();
+        }
+
+        if (ContactLogic.score >= 150)
+        {
+            scoreText.text = "PRESS ANY KEY TO RESTART";
+            restartButtonText.text = "";
+        }
+        else
+        {
+            scoreText.text = ContactLogic.score.ToString();
+
         }
     }
     
