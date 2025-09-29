@@ -9,6 +9,7 @@ TagManager:
   - Black
   - AllWalls
   - GameOverScreen
+  - Weirdo
   layers:
   - Default
   - TransparentFX

@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TetrisMovement : MonoBehaviour
 {
@@ -8,20 +10,26 @@ public class TetrisMovement : MonoBehaviour
     public static int height = 20;
     public static int width = 10;
     public Vector3 rotationPoint;
-    public static int score;
+    public static int score = 0;
     private static Transform[,] grid = new Transform[width, height];
     public SpawnScript spawnScript;
+    
+    public GameObject quadObject;
+    private float duration = 0.6f; // Duration of animation in seconds
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        score = 0;
+
         spawnScript = FindFirstObjectByType<SpawnScript>();
+        quadObject = GameObject.FindGameObjectWithTag("Weirdo");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(score);
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.position += Vector3.left;
@@ -107,9 +115,14 @@ public class TetrisMovement : MonoBehaviour
         {
             if (HasLine(i))
             {
+                
                 DeleteLine(i);
                 RowDown(i);
                 score++;
+                StartCoroutine(ExpandAndFadeIn(quadObject, duration));
+                spawnScript.blockSound.PlayOneShot(spawnScript.blockSoundClips[4]);
+                        StartCoroutine(ExpandAndFadeIn(quadObject, duration));
+
             }
         }
     }
@@ -161,5 +174,54 @@ public class TetrisMovement : MonoBehaviour
             }
         }
         return false;
+    }
+    
+    public IEnumerator ExpandAndFadeIn(GameObject quadObject, float duration)
+    {
+        if (quadObject == null)
+            yield break;
+
+        Renderer renderer = quadObject.GetComponent<Renderer>();
+        if (renderer == null || renderer.material == null)
+            yield break;
+
+        // Initial setup
+        quadObject.transform.localScale = Vector3.zero;
+
+        // Set initial transparent color
+        Color originalColor = renderer.material.color;
+        Color startColor = originalColor;
+        startColor.a = 0f;
+        renderer.material.color = startColor;
+
+        // Target scale
+        Vector3 targetScale = new Vector3(30f, 18f, 11f);
+        float time = 0f;
+
+        while (time < duration)
+        {
+            float t = time / duration;
+
+            // Scale
+            quadObject.transform.localScale = Vector3.Lerp(Vector3.zero, targetScale, t);
+
+            // Fade in alpha
+            Color newColor = originalColor;
+            newColor.a = Mathf.Lerp(0f, originalColor.a, t);
+            renderer.material.color = newColor;
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure final state
+        quadObject.transform.localScale = targetScale;
+        renderer.material.color = originalColor;
+
+        // Optional: Wait briefly before hiding
+        yield return new WaitForSeconds(0.4f);
+
+        // Hide the object
+        quadObject.SetActive(false);
     }
 }
