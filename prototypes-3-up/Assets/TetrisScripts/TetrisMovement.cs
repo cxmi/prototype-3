@@ -8,13 +8,15 @@ public class TetrisMovement : MonoBehaviour
     public static int height = 20;
     public static int width = 10;
     public Vector3 rotationPoint;
-    
+    public static int score;
     private static Transform[,] grid = new Transform[width, height];
+    public SpawnScript spawnScript;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        score = 0;
+        spawnScript = FindFirstObjectByType<SpawnScript>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,18 @@ public class TetrisMovement : MonoBehaviour
                 //this is when block touches the ground
                 transform.position -= Vector3.down;
                 AddToGrid();
+                
+                //check for game over
+                
+                if (IsGameOver())
+                {
+                    //Debug.Log("Game Over!");
+                    // Stop the game
+                    Time.timeScale = 0;
+                    spawnScript.gameOverScreen.SetActive(true);
+                    return;
+                }
+
                 CheckForLines();
                 this.enabled = false;
                 FindFirstObjectByType<SpawnScript>().NewBlock();
@@ -95,6 +109,7 @@ public class TetrisMovement : MonoBehaviour
             {
                 DeleteLine(i);
                 RowDown(i);
+                score++;
             }
         }
     }
@@ -133,5 +148,18 @@ public class TetrisMovement : MonoBehaviour
                 }
             }
         }
+    }
+    
+    bool IsGameOver()
+    {
+        foreach (Transform child in transform)
+        {
+            int y = Mathf.RoundToInt(child.transform.position.y);
+            if (y >= height - 1) // or height, depending on your grid definition
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
