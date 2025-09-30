@@ -178,6 +178,7 @@ public class TetrisMovement : MonoBehaviour
     
     public IEnumerator ExpandAndFadeIn(GameObject quadObject, float duration)
     {
+
         if (quadObject == null)
             yield break;
 
@@ -222,6 +223,8 @@ public class TetrisMovement : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
 
         // Hide the object
-        quadObject.SetActive(false);
+        //quadObject.SetActive(false);
+        quadObject.transform.localScale = Vector3.zero;
+
     }
 }
