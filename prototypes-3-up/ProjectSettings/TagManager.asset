@@ -10,6 +10,7 @@ TagManager:
   - AllWalls
   - GameOverScreen
   - Weirdo
+  - Corn
   layers:
   - Default
   - TransparentFX
