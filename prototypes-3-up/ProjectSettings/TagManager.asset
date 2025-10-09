@@ -11,6 +11,9 @@ TagManager:
   - GameOverScreen
   - Weirdo
   - Corn
+  - Draggable
+  - Pickupable
+  - Enemy
   layers:
   - Default
   - TransparentFX
