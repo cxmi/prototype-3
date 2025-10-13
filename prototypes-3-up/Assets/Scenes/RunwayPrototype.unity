@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 22644805}
   - component: {fileID: 22644807}
   - component: {fileID: 22644808}
+  - component: {fileID: 22644809}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -187,7 +188,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: -876546973899608171, guid: 0e9d5a909a1f7e84882a534d0d11e49f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,7 +229,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000034266623, y: 0.7071065, z: 0.00000068663195, w: 0.7071072}
   m_LocalPosition: {x: 0.75, y: 2.5, z: -4}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalScale: {x: 1.22, y: 1.22, z: 1.22}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 744671920}
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db105c5de810488b82f956d7fc2f57e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 8
+  moveSpeed: 5
 --- !u!120 &22644807
 LineRenderer:
   serializedVersion: 2
@@ -294,7 +295,7 @@ LineRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -40
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -306,13 +307,31 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
+        value: 0
+        inSlope: 2.6015625
+        outSlope: 2.6015625
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.33333334
+        outWeight: 0.28381792
+      - serializedVersion: 3
+        time: 0.4248255
+        value: 0.5773788
+        inSlope: 0.43032554
+        outSlope: 0.43032554
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.31865567
+      - serializedVersion: 3
+        time: 1
+        value: 0.9765625
+        inSlope: 2.4037826
+        outSlope: 2.4037826
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.28149346
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -369,6 +388,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfade8938640742a68c2e69639cf9bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  pointSpacing: 0.1
+  maxPoints: 80
+--- !u!114 &22644809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22644800}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e57f26734d6d8469c91614d3afb79b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletSpawner
+  bulletPrefab: {fileID: 6648937706441296435, guid: 11695caafbfe84453bb53a539e081309, type: 3}
+  bulletSpeed: 2
+  spawnRate: 0.1
+  poolSize: 200
+  rotationSpeed: 120
 --- !u!1 &111435638
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,12 +699,20 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: spawnRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: rotationSpeed
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2876953935358895781, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_Name
       value: BulletSpawner (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2876953935358895781, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1583,7 +1629,7 @@ Transform:
   m_GameObject: {fileID: 744671919}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1614,7 +1660,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cc86c8b84b5c4ad4898dbe254e5a2716, type: 2}
+  - {fileID: 2100000, guid: 54f9493749bd84b7bbd8b4a15b499dff, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2147,7 +2193,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.53
+      value: 9.4
       objectReference: {fileID: 0}
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2155,7 +2201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.93
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2189,12 +2235,28 @@ PrefabInstance:
       propertyPath: poolSize
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: spawnRate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6648937706441296435, guid: 7ba24b96b9fc24d70896fd88bee7ec22, type: 3}
     - target: {fileID: 2876953935358895781, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_Name
       value: BulletSpawner (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4058675520493101871, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094980510720129429, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6094980510720129429, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2352,7 +2414,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801279906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2370,7 +2432,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 0035835b1a47c4f4d80034d0aa950c87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2461,7 +2523,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801279906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37ff8030527c14561bdb0600d35c1488, type: 3}
   m_Name: 
@@ -2525,11 +2587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: spawnRate
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: bulletSpeed
@@ -2545,7 +2607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2876953935358895781, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2677,6 +2739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1474649512588881185, guid: 11695caafbfe84453bb53a539e081309, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b4808067f3cc48cf82da24d62b55b3c, type: 2}
     - target: {fileID: 5131196982018616451, guid: 11695caafbfe84453bb53a539e081309, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2721,6 +2787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 6648937706441296435, guid: 11695caafbfe84453bb53a539e081309, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2739,7 +2809,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.83
+      value: -8.9
       objectReference: {fileID: 0}
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2747,7 +2817,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.58
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 353112212801805116, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2780,6 +2850,18 @@ PrefabInstance:
     - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: poolSize
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: spawnRate
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 6648937706441296435, guid: 7ba24b96b9fc24d70896fd88bee7ec22, type: 3}
+    - target: {fileID: 700664071840322142, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
+      propertyPath: rotationSpeed
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 2876953935358895781, guid: 8f73fd10442de40279ff80c14ffc855f, type: 3}
       propertyPath: m_Name
