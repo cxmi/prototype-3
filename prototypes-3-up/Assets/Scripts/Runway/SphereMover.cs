@@ -3,6 +3,20 @@ using UnityEngine;
 public class SphereMover : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public KeyCode wKey = KeyCode.W;
+    public KeyCode aKey = KeyCode.A;
+    public KeyCode dKey = KeyCode.D;
+    public KeyCode sKey = KeyCode.S;
+    
+    public float maxRotationSpeed = 180f;  // Max degrees per second
+    public float acceleration = 100f;      // Speed increase per second
+    public float deceleration = 150f;      // Speed decrease per second
+
+    private float currentSpeed = 0f;
+    
+    
+    //private SpriteRenderer spriteRenderer;
+    
 
     void Update()
     {
@@ -15,5 +29,29 @@ public class SphereMover : MonoBehaviour
 
         // Normalize and apply speed
         transform.Translate(movement.normalized * moveSpeed * Time.deltaTime, Space.World);
+        
+        
+        
+        if (Input.GetKey(wKey) || Input.GetKey(sKey) || Input.GetKey(aKey) || Input.GetKey(dKey))
+        {
+            // Increase rotation speed
+            currentSpeed += acceleration * Time.deltaTime;
+
+        }
+        
+        
+        else
+        {
+            // Decrease rotation speed
+            currentSpeed -= deceleration * Time.deltaTime;
+        }
+
+        // Clamp speed between 0 and max
+        currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxRotationSpeed);
+
+        // Apply rotation on Y-axis
+        transform.Rotate(0f, currentSpeed * Time.deltaTime, 0f );
     }
 }
+
+
