@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BurstRotator : MonoBehaviour
 {
@@ -17,17 +18,60 @@ public class BurstRotator : MonoBehaviour
     private bool goingUp = true;
 
     private SpriteMask spriteMask;
-
+    
+    //InputSystem
+    public InputActionReference inputAction;
     public KeyCode keyBind = KeyCode.W;
+    
+
+    
     void Start()
     {
+        inputAction.action.Enable();
+   
         spriteMask = GetComponent<SpriteMask>();
         currentCutoff = minCutoff;             // Start from the min value
         spriteMask.alphaCutoff = currentCutoff;
+        
     }
     void Update()
     {
-        if (Input.GetKey(keyBind))
+        Vector2 input = inputAction.action.ReadValue<Vector2>();
+
+        float rotatingSpeed = 0;
+        
+        switch (keyBind)
+        {
+            case KeyCode.W:
+                if (input.y > 0f)
+                {
+                    rotatingSpeed = Mathf.Abs(input.y);
+                }
+                break;
+            case KeyCode.S:
+                if (input.y < 0f)
+                {
+                    rotatingSpeed = Mathf.Abs(input.y);
+                }
+                break;
+            case KeyCode.D:
+                if (input.x > 0f)
+                {
+                    rotatingSpeed = Mathf.Abs(input.x);
+                }
+                break;
+            case KeyCode.A:
+                if (input.y < 0f)
+                {
+                    rotatingSpeed = Mathf.Abs(input.x);
+                }
+                break;
+            default:
+                break;
+        }
+    
+        
+        if (rotatingSpeed > 0 || Input.GetKey(keyBind))
         {
             // Increase rotation speed
             currentSpeed += acceleration * Time.deltaTime;
@@ -62,7 +106,7 @@ public class BurstRotator : MonoBehaviour
         }
 
         // Clamp speed between 0 and max
-        currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxRotationSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxRotationSpeed * rotatingSpeed);
 
         // Apply rotation on Y-axis
         transform.Rotate(0f, 0f, currentSpeed * Time.deltaTime);

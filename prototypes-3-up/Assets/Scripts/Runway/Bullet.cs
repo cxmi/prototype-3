@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip[] audioClips;
 
+    public AudioSource musicSource;
 
     public BulletAudio bulletAudio;
 
@@ -20,6 +21,9 @@ public class Bullet : MonoBehaviour
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         startingMaterial = spriteRenderer.material;
+
+        //musicSource = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+        
         if (hasAudio)
         {
             audioSource = GetComponent<AudioSource>();
@@ -56,6 +60,8 @@ public class Bullet : MonoBehaviour
 
             //int randomInt = UnityEngine.Random.Range(0, audioClips.Length);
 
+            //musicSource.pitch += 0.1f;
+            
             if (hasAudio)
             {
                 int clipToPlay = bulletAudio.playInt;

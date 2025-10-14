@@ -1,8 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ColorAdjuster : MonoBehaviour
 {
-    public KeyCode keyBind = KeyCode.W; // Key to hold for animation
+    //InputSystem
+    public InputActionReference inputAction;
+    public KeyCode keyBind = KeyCode.W; 
+   
     public float speed = 1f;                 // Speed of green channel change
     public float minG = 0.2f;                // Min green value
     public float maxG = 1f;                  // Max green value
@@ -37,7 +41,41 @@ public class ColorAdjuster : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(keyBind))
+        Vector2 input = inputAction.action.ReadValue<Vector2>();
+        
+        float colorChangeSpeed = 0;
+        
+        switch (keyBind)
+        {
+            case KeyCode.W:
+                if (input.y > 0f)
+                {
+                    colorChangeSpeed = Mathf.Abs(input.y);
+                }
+                break;
+            case KeyCode.S:
+                if (input.y < 0f)
+                {
+                    colorChangeSpeed = Mathf.Abs(input.y);
+                }
+                break;
+            case KeyCode.D:
+                if (input.x > 0f)
+                {
+                    colorChangeSpeed = Mathf.Abs(input.x);
+                }
+                break;
+            case KeyCode.A:
+                if (input.y < 0f)
+                {
+                    colorChangeSpeed = Mathf.Abs(input.x);
+                }
+                break;
+            default:
+                break;
+        }
+        
+        if (colorChangeSpeed > 0)
         {
             float delta = speed * Time.deltaTime;
 

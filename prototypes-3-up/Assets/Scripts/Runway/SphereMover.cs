@@ -40,7 +40,9 @@ public class SphereMover : MonoBehaviour
         
         
         
-        if (Input.GetKey(wKey) || Input.GetKey(sKey) || Input.GetKey(aKey) || Input.GetKey(dKey))
+       // if (Input.GetKey(wKey) || Input.GetKey(sKey) || Input.GetKey(aKey) || Input.GetKey(dKey))
+       
+       if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
             // Increase rotation speed
             currentSpeed += acceleration * Time.deltaTime;

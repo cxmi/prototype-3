@@ -1,7 +1,11 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Stretching : MonoBehaviour
 {
+    
+    //InputSystem
+    public InputActionReference inputAction;
     public KeyCode keyBind = KeyCode.Space;
 
     [Header("Scale Limits")]
@@ -29,7 +33,40 @@ public class Stretching : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(keyBind))
+        Vector2 input = inputAction.action.ReadValue<Vector2>();
+        
+        float stretchSpeed = 0;
+        
+        switch (keyBind)
+        {
+            case KeyCode.W:
+                if (input.y > 0f)
+                {
+                    stretchSpeed = Mathf.Abs(input.y);
+                }
+                break;
+            case KeyCode.S:
+                if (input.y < 0f)
+                {
+                    stretchSpeed = Mathf.Abs(input.y);
+                }
+                break;
+            case KeyCode.D:
+                if (input.x > 0f)
+                {
+                    stretchSpeed = Mathf.Abs(input.x);
+                }
+                break;
+            case KeyCode.A:
+                if (input.y < 0f)
+                {
+                    stretchSpeed = Mathf.Abs(input.x);
+                }
+                break;
+            default:
+                break;
+        }
+        if (stretchSpeed > 0)
         {
             float deltaX = xSpeed * Time.deltaTime;
             float deltaY = ySpeed * Time.deltaTime;
