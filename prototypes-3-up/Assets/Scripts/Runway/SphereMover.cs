@@ -14,9 +14,17 @@ public class SphereMover : MonoBehaviour
 
     private float currentSpeed = 0f;
     
+    public AudioSource mainSong;
+
+    public float maxPitch = 1f;
+    public float pitchAcceleration = 50f;
+    public float pitchDeceleration = 50f;
+    private float currentPitch = 0.1f;
+    public float minPitch = 0.1f;
     
     //private SpriteRenderer spriteRenderer;
-    
+
+
 
     void Update()
     {
@@ -36,6 +44,8 @@ public class SphereMover : MonoBehaviour
         {
             // Increase rotation speed
             currentSpeed += acceleration * Time.deltaTime;
+            
+            currentPitch += pitchAcceleration * Time.deltaTime;
 
         }
         
@@ -44,13 +54,18 @@ public class SphereMover : MonoBehaviour
         {
             // Decrease rotation speed
             currentSpeed -= deceleration * Time.deltaTime;
+            currentPitch -= pitchDeceleration * Time.deltaTime;
         }
 
         // Clamp speed between 0 and max
         currentSpeed = Mathf.Clamp(currentSpeed, 0f, maxRotationSpeed);
+        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
+        
 
         // Apply rotation on Y-axis
         transform.Rotate(0f, currentSpeed * Time.deltaTime, 0f );
+        
+        mainSong.pitch = currentPitch;
     }
 }
 

@@ -9,15 +9,27 @@ public class Bullet : MonoBehaviour
     public Material switchToMaterial;
     public Material startingMaterial;
     public AudioSource audioSource;
-    public AudioClip audioClip;
-    
+    public AudioClip[] audioClips;
+
+
+    public BulletAudio bulletAudio;
+
+    public bool hasAudio;
+
     void Start()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         startingMaterial = spriteRenderer.material;
-        audioSource = GetComponent<AudioSource>();
-        audioClip = audioSource.clip;
+        if (hasAudio)
+        {
+            audioSource = GetComponent<AudioSource>();
+            bulletAudio = FindFirstObjectByType<BulletAudio>();
+        }
+        
+        //audioClips
+        //audioClip = audioSource.clip;
     }
+
     void OnEnable()
     {
         lifeTimer = 0f;
@@ -40,7 +52,20 @@ public class Bullet : MonoBehaviour
         {
             spriteRenderer.material = switchToMaterial;
             spriteRenderer.sortingOrder = 15;
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
+
+            //int randomInt = UnityEngine.Random.Range(0, audioClips.Length);
+
+            if (hasAudio)
+            {
+                int clipToPlay = bulletAudio.playInt;
+                audioSource.PlayOneShot(audioClips[clipToPlay], 0.2f);
+                bulletAudio.IncrementClip();
+
+                Debug.Log(audioClips[clipToPlay]);
+            }
+           
         }
     }
 }
+   

@@ -132,7 +132,26 @@ MonoBehaviour:
   switchToMaterial: {fileID: 2100000, guid: 54f9493749bd84b7bbd8b4a15b499dff, type: 2}
   startingMaterial: {fileID: 0}
   audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  audioClips:
+  - {fileID: 8300000, guid: e2f11d9c0585a426389fcd47a0d7302c, type: 3}
+  - {fileID: 8300000, guid: 70a0a211320524d14bbd713ca0bd3bc6, type: 3}
+  - {fileID: 8300000, guid: e2f11d9c0585a426389fcd47a0d7302c, type: 3}
+  - {fileID: 8300000, guid: c4de4028e82e4404c860c9a9940b5c8f, type: 3}
+  - {fileID: 8300000, guid: 0bcd86b6b4ba24cbe9e7a06c9237950e, type: 3}
+  - {fileID: 8300000, guid: c4de4028e82e4404c860c9a9940b5c8f, type: 3}
+  - {fileID: 8300000, guid: 0bcd86b6b4ba24cbe9e7a06c9237950e, type: 3}
+  - {fileID: 8300000, guid: 9f8fbd2dafe69423c9b6cd942585dfa5, type: 3}
+  - {fileID: 8300000, guid: 0bcd86b6b4ba24cbe9e7a06c9237950e, type: 3}
+  - {fileID: 8300000, guid: 0bcd86b6b4ba24cbe9e7a06c9237950e, type: 3}
+  - {fileID: 8300000, guid: 9f8fbd2dafe69423c9b6cd942585dfa5, type: 3}
+  - {fileID: 8300000, guid: 9f8fbd2dafe69423c9b6cd942585dfa5, type: 3}
+  - {fileID: 8300000, guid: 0bcd86b6b4ba24cbe9e7a06c9237950e, type: 3}
+  - {fileID: 8300000, guid: c4de4028e82e4404c860c9a9940b5c8f, type: 3}
+  - {fileID: 8300000, guid: e2f11d9c0585a426389fcd47a0d7302c, type: 3}
+  - {fileID: 8300000, guid: c4de4028e82e4404c860c9a9940b5c8f, type: 3}
+  - {fileID: 8300000, guid: 0bcd86b6b4ba24cbe9e7a06c9237950e, type: 3}
+  bulletAudio: {fileID: 0}
+  hasAudio: 0
 --- !u!54 &8454593648021610757
 Rigidbody:
   m_ObjectHideFlags: 0

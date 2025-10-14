@@ -256,6 +256,11 @@ MonoBehaviour:
   maxRotationSpeed: 169
   acceleration: 130
   deceleration: 300
+  mainSong: {fileID: 138209157}
+  maxPitch: 1
+  pitchAcceleration: 1
+  pitchDeceleration: 1
+  minPitch: 0.6
 --- !u!120 &22644807
 LineRenderer:
   serializedVersion: 2
@@ -1866,6 +1871,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &851376354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 851376356}
+  - component: {fileID: 851376355}
+  m_Layer: 0
+  m_Name: BulletAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &851376355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851376354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61503716c654c4b69b1fc8726227eca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  playInt: 0
+  maxValue: 4
+  bulletPrefab: {fileID: 6648937706441296435, guid: 11695caafbfe84453bb53a539e081309, type: 3}
+--- !u!4 &851376356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851376354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 7.89, z: -5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852721515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +3391,10 @@ MonoBehaviour:
   spriteRenderer: {fileID: 0}
   switchToMaterial: {fileID: 2100000, guid: 0035835b1a47c4f4d80034d0aa950c87, type: 2}
   startingMaterial: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioClips: []
+  bulletAudio: {fileID: 0}
+  hasAudio: 0
 --- !u!1001 &3542009550812532361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3514,6 +3570,7 @@ SceneRoots:
   - {fileID: 214636781}
   - {fileID: 1144041065}
   - {fileID: 380999625}
+  - {fileID: 851376356}
   - {fileID: 138209158}
   - {fileID: 3280045767312232294}
   - {fileID: 3542009550812532361}
