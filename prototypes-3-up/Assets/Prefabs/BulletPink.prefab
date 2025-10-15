@@ -384,7 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb03b9fe12f7443690af191d1303351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  lifetime: 5
+  lifetime: 8
   spriteRenderer: {fileID: 0}
   switchToMaterial: {fileID: 2100000, guid: 54f9493749bd84b7bbd8b4a15b499dff, type: 2}
   startingMaterial: {fileID: 0}

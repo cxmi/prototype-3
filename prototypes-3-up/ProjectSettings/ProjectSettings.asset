@@ -13,10 +13,10 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: christine mi
-  productName: brainrot-tetris
+  productName: pink
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 1, g: 0.5896226, b: 0.744483, a: 1}
+  m_SplashScreenBackgroundColor: {r: 1, g: 0.19339621, b: 0.5626086, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 0

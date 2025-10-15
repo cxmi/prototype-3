@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ShittyTetris.unity
     guid: 45a440a91613641d882ab82529edbda7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CornPrototype.unity
     guid: 9f4cb4ac112af43239e198481aa05520
+  - enabled: 1
+    path: Assets/Scenes/RunwayPrototype.unity
+    guid: acdc481009bdf462baa7ff31dca851a9
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
