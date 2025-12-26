@@ -1,5 +1,3 @@
-# FILL IN INFO ABOUT YOUR GAME HERE. 
+# Info
 
-DO NOT LEAVE IT LIKE THIS!!!
-
-Please? Please, give me content. I'm begging you. It's not that hard. Thanks.
+Contains Runway, Cornhole, and Shitty Tetris
