@@ -1,3 +1,3 @@
 # Info
 
-Contains Runway, Cornhole, and Shitty Tetris
+Contains CMYK, Runway, Cornhole, and Shitty Tetris
